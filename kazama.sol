@@ -827,7 +827,7 @@ contract SenshiNFT is ERC721, ERC721Enumerable, ERC721URIStorage, AccessControl,
     // Function to mint a new senshi
     // [NOTE: Only KAZAMA contract has MINTER_ROLE]
     function safeMint (address _to) external onlyRole (MINTER_ROLE) {
-        require (nextSenshiId <= maxSenshi, "ERROR: Above max amount of Senshi's");
+        require (nextSenshiId <= maxSenshi, "ERROR: Above max amount of Senshis");
 
         uint256 senshiId = nextSenshiId ++;
         uint256 generatedShareBooster = assignRewardBoostShare();
@@ -1516,4 +1516,3 @@ interface KazamaRouter {
         uint deadline
     ) external;
 }
-
